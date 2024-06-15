@@ -91,7 +91,7 @@ const spin = () => {
         const selectedSymbol = reelSymbols[randomIndex];
         reels[i].push(selectedSymbol);
         reelSymbols.splice(randomIndex, 1); // index , no of elements to remove
-        
+
         }
     }
 
@@ -101,3 +101,18 @@ const spin = () => {
 let balance = deposit();
 const noOfLines = lines();
 const bet = getBet(balance , noOfLines);
+const reels = spin();
+
+const transpose = () => {
+    const rows = [];
+
+    for (let i = 0; i < ROWS; i++) {
+        rows.push([]);
+        for (let j = 0; j < COLS; j++) {
+        rows[i].push(reels[j][i]);
+        }
+    }
+
+  return rows;
+  
+};
