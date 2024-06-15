@@ -109,10 +109,23 @@ const transpose = () => {
     for (let i = 0; i < ROWS; i++) {
         rows.push([]);
         for (let j = 0; j < COLS; j++) {
-        rows[i].push(reels[j][i]);
+            rows[i].push(reels[j][i]);
         }
     }
 
   return rows;
-  
-};
+
+}; 
+
+const printRows = (rows) => {
+    for (const row of rows) {
+      let rowString = "";
+      for (const [i, symbol] of row.entries()) {
+        rowString += symbol;
+        if (i != row.length - 1) {
+          rowString += " | ";
+        }
+      }
+      console.log(rowString);
+    }
+  };
