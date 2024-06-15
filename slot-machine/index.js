@@ -36,13 +36,13 @@ const lines = () => {
     }
 };
 
-const getBet = (balance) => {
+const getBet = (balance , noOfLines) => {
 
     while(true){
         const bet = prompt("Enter a bet amount: ")
         const betAmount = parseFloat(bet)
 
-        if (isNaN(betAmount) || betAmount <= 0 || betAmount > balance){
+        if (isNaN(betAmount) || betAmount <= 0 || betAmount > balance / noOfLines){
             console.log("Invalid bet amount , try again !.")
         } else {
             return betAmount;
